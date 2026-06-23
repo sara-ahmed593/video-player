@@ -1,19 +1,30 @@
 * {
   transition: 0.2s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   display: flex;
+  height: 100vh;
   justify-content: center;
+  align-items: center;
 }
-body .mask {
+body button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+body .video-container {
   width: 100%;
   max-width: 1345px;
-  margin: 185px 127px;
   border-radius: 15px;
   box-shadow: 0px 7px 29px 0px #979797;
 }
-body .mask .video {
+body .video-container .video-display {
   width: 100%;
   max-width: 1345px;
   height: auto;
@@ -21,26 +32,42 @@ body .mask .video {
   -o-object-fit: cover;
      object-fit: cover;
 }
-body .mask .group {
+body .video-container .video-controls {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 36px 50px;
-  gap: 20px;
 }
-body .mask .group .path .play {
+body .video-container .video-controls .controls-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+body .video-container .video-controls .controls-left .play-pause-btn .play {
   display: none;
 }
-body .mask .group .player {
+body .video-container .video-controls .controls-center {
   display: flex;
+  align-items: center;
+  flex: 1;
 }
-body .mask .group .player .video-progess {
-  height: 30px;
-  width: 638px;
+body .video-container .video-controls .controls-center .player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 12px;
+}
+body .video-container .video-controls .controls-center .player .video-progess {
+  height: 17px;
+  width: 100%;
   background-color: rgba(216, 216, 216, 0.8470588235);
   border-radius: 8.5px;
   position: relative;
+  flex: 1;
+  min-width: 100px;
 }
-body .mask .group .player .video-progess .overlay {
+body .video-container .video-controls .controls-center .player .video-progess .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -48,8 +75,9 @@ body .mask .group .player .video-progess .overlay {
   width: 0%;
   border-radius: 8.5px;
 }
-body .mask .group .player .time-video {
-  width: 153px;
+body .video-container .video-controls .controls-center .player .time-video {
+  width: 100%;
+  max-width: 153px;
   height: 30px;
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -57,24 +85,29 @@ body .mask .group .player .time-video {
   color: #3C444E;
   margin-left: 18px;
 }
-body .mask .group .sound {
+body .video-container .video-controls .controls-right {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+body .video-container .video-controls .controls-right .sound {
   width: 176px;
   height: 24px;
   display: flex;
   align-items: center;
 }
-body .mask .group .sound .mute {
+body .video-container .video-controls .controls-right .sound .mute {
   display: none;
 }
-body .mask .group .sound .sound-progess {
-  width: 145px;
+body .video-container .video-controls .controls-right .sound .sound-progess {
+  width: 100%;
   height: 6px;
   background-color: rgba(216, 216, 216, 0.8470588235);
   border-radius: 8.5px;
   margin-left: 7px;
   position: relative;
 }
-body .mask .group .sound .sound-progess .soundoverlay {
+body .video-container .video-controls .controls-right .sound .sound-progess .soundoverlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -83,118 +116,30 @@ body .mask .group .sound .sound-progess .soundoverlay {
   border-radius: 8.5px;
 }
 
-@media (max-width: 1400px) {
-  body img {
-    width: 28px;
-    height: 28px;
-  }
-  body .mask {
-    margin: 162px 111px;
-  }
-  body .mask .group {
-    gap: 17.5px;
-  }
-  body .mask .group .player .video-progess {
-    width: 558px;
-    height: 26.25px;
-  }
-  body .mask .group .player .time-video {
-    font-size: 21px;
-    width: 133px;
-  }
-  body .mask .group .sound .sound-progess {
-    width: 126px;
-  }
-}
-@media (max-width: 1200px) {
-  body img {
-    width: 24px;
-    height: 24px;
-  }
-  body .mask {
-    margin: 138px 95px;
-  }
-  body .mask .group {
-    gap: 15px;
-  }
-  body .mask .group .player .video-progess {
-    width: 440px;
-    height: 22.5px;
-  }
-  body .mask .group .player .time-video {
-    font-size: 18px;
-    width: 114px;
-  }
-  body .mask .group .sound .sound-progess {
-    width: 108px;
-  }
-}
 @media (max-width: 992px) {
-  body img {
-    width: 20px;
-    height: 20px;
+  body .video-container .video-controls .controls-left {
+    gap: 20px;
   }
-  body .mask {
-    margin: 114px 78px;
-  }
-  body .mask .group {
-    gap: 12.4px;
-  }
-  body .mask .group .player .video-progess {
-    width: 300px;
-    height: 18.6px;
-  }
-  body .mask .group .player .time-video {
-    font-size: 14.5px;
-    width: 94.86px;
-  }
-  body .mask .group .sound .sound-progess {
-    width: 90px;
+  body .video-container .video-controls .controls-right .sound {
+    width: 150px;
   }
 }
 @media (max-width: 768px) {
-  body img {
-    width: 16px;
-    height: 16px;
+  body .video-container .video-controls {
+    flex-direction: column;
+    gap: 30px;
   }
-  body .mask {
-    margin: 88px 61px;
+  body .video-container .video-controls .controls-left {
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
   }
-  body .mask .group {
-    gap: 9.6px;
+  body .video-container .video-controls .controls-center {
+    width: 100%;
   }
-  body .mask .group .player .video-progess {
-    width: 200px;
-    height: 14.4px;
-  }
-  body .mask .group .player .time-video {
-    font-size: 12px;
-    width: 73px;
-  }
-  body .mask .group .sound .sound-progess {
-    width: 60px;
-  }
-}
-@media (max-width: 576px) {
-  body img {
-    width: 12px;
-    height: 12px;
-  }
-  body .mask {
-    margin: 66px 45px;
-  }
-  body .mask .group {
-    gap: 7.2px;
-  }
-  body .mask .group .player .video-progess {
-    width: 229px;
-    height: 10.8px;
-  }
-  body .mask .group .player .time-video {
-    font-size: 9px;
-    width: 55px;
-  }
-  body .mask .group .sound .sound-progess {
-    width: 52.2px;
+  body .video-container .video-controls .controls-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
   }
 }/*# sourceMappingURL=style.css.map */

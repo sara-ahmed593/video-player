@@ -1,64 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>video player</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=SN+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=SN+Pro:ital@0;1&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./src/css/style.css">
 </head>
+
 <body>
-    <div class="mask">
+    <section class="video-container">
 
-   
-    <video class="video" src="./src/img/videos/file_example_MP4_1280_10MG.mp4"></video>
 
-    <div class="group">
-        <div class="backward">
-            <img src="./src/img/backward.png" alt="backward">
-        </div>
-        <div class="path">
-            <img class="pause" src="./src/img/path.png" alt="path">
-            <img class="play" src="./src/img/play.png" alt="play">
-        </div>
-        <div class="forward">
-            <img src="./src/img/forward.png" alt="forward">
-        </div>
-        <div class="shape">
-            <img src="./src/img/Shape.png" alt="shape">
-        </div>
+        <video class="video-display" src="./src/img/videos/file_example_MP4_1280_10MG.mp4"></video>
 
-       <div class="player">
-         <div class="video-progess">
-            <div class="overlay">
-              
+
+        <div class="video-controls">
+
+
+            <div class="controls-left">
+                <button class="backward">
+                    <img src="./src/img/backward.png" alt="backward">
+                </button>
+
+                <button class="play-pause-btn">
+                    <img class="pause" src="./src/img/path.png" alt="pause">
+                    <img class="play" src="./src/img/play.png" alt="play">
+                </button>
+
+                <button class="forward">
+                    <img src="./src/img/forward.png" alt="forward">
+                </button>
+
+                <button class="stop-btn">
+                    <img src="./src/img/Shape.png" alt="shape">
+                </button>
             </div>
-        </div>
-         <div class="time-video">
-                 <span class="currentTime"></span>  /<span class="durationVideo"></span>
+
+            <div class="controls-center">
+                <div class="player">
+                    <div class="video-progess">
+                        <div class="overlay"></div>
+                    </div>
+
+                    <div class="time-video">
+                        <span class="currentTime"></span> /
+                        <span class="durationVideo"></span>
+                    </div>
                 </div>
-       </div>
+            </div>
 
-        <div class="sound">
-            <img class="unmute" src="./src/img/volume-2.png" alt="volume-2">
-            <img class="mute" src="./src/img/volume-off.png" alt="volume">
-              <div class="sound-progess">
-            <div class="soundoverlay">
-            </div></div>
+
+            <div class="controls-right">
+                <div class="sound">
+                    <button class="sound-btn">
+                        <img class="unmute" src="./src/img/volume-2.png" alt="volume">
+                        <img class="mute" src="./src/img/volume-off.png" alt="mute">
+                    </button>
+
+                    <div class="sound-progess">
+                        <div class="soundoverlay"></div>
+                    </div>
+                </div>
+
+                <button class="fullscreen-btn">
+                    <img src="./src/img/Combined Shape.png" alt="fullscreen">
+                </button>
+            </div>
+
         </div>
 
-         <div class="combined">
-            <img src="./src/img/Combined Shape.png" alt="Combined">
-        </div>
 
-    </div>
-    
-    </div>
-   
- 
+    </section>
+
+
 
     <script src="./src/js/script.js"></script>
 </body>
+
 </html>
